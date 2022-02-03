@@ -1,6 +1,8 @@
 # BC4M-CaseApiFlask
 
-#Hangi sistemden kuracağımızı söylüyoruz. kullanılan sisteme göre ubuntu şeklinde de girdiler olabiliyor.\
+#DOCKERFILE anlatımı
+
+Hangi sistemden kuracağımızı söylüyoruz. kullanılan sisteme göre ubuntu şeklinde de girdiler olabiliyor.\
 FROM python:3.9.7\
 // mkdir yeni bir dizin oluşturmaya yarar // -p (parents) yoksa gerekli dizinleri oluşturur varsa hata döndürmez.\
 RUN mkdir -p /usr/src/app\
