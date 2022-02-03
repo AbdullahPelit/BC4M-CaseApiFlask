@@ -19,6 +19,7 @@ ENTRYPOINT [ "python3", "app.py" ] (Exec Form tipinde bir yazım.)\
 /portu belirtiyoruz.\
 EXPOSE 5000\
 
+#KONTEYNIRLASTIRMA SURECI
 
 1)Öncelikle CMD de Uygulamanın bulundugu klasöre geliyoruz.\
 2)image oluşturmak için "docker build -t test_bestcloud ." yazıyoruz. // t nin anlamı tag yani bir isim veriyoruz imageimize // sonda koydugumuz . ise yerel lokasyonda çalıştırmak \istediğimiz anlamına geliyor.\
