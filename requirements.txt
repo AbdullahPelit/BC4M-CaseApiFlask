@@ -1,0 +1,5 @@
+flask
+config
+jsonify
+requests
+configparser
