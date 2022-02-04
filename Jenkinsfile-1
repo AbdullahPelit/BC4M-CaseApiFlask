@@ -1,12 +1,11 @@
 pipeline {
-     
-    agent { dockerfile true  } //dockerfile true yapmamızın sebebi docker hubdan çekmek yerine dockerfiledan yeni bir konteynır oluşturması
+    agent { dockerfile true }
     stages {
-        stage('test') {
+        stage('Test') {
             steps {
-                sh "git --version"                
+                sh 'node --version'
+                sh 'svn --version'
             }
         }
-        
     }
 }
