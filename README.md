@@ -32,3 +32,9 @@ EXPOSE 5000\
 //5000:5000 ilk 5000 target(hedefi) yani konteynırın içindeki port ikincisi ise yayınlacak portu veriyor\
 //--name konteynıra isim verir.\
 // son parametre ise imageimizin tagi.\
+
+#docker hub
+
+1)docker hubda repo oluştur\
+2)docker tag komutuyla repodaki ismi eşle\
+3)docker push username/reponame:tag(lastest gibi)\

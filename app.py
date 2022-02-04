@@ -5,7 +5,6 @@ from unicodedata import name
 import requests
 
 from flask import Flask, jsonify,render_template,url_for
-
 app = Flask(__name__)
 
 @app.route("/" , methods =["GET"])
