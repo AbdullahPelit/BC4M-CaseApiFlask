@@ -1,0 +1,11 @@
+pipeline {
+    agent { docker {image 'python'}  } //dockerfile true yapmamızın sebebi docker hubdan çekmek yerine dockerfiledan yeni bir konteynır oluşturması
+    stages {
+        stage('test') {
+            steps {
+                sh "node --version"                
+            }
+        }
+        
+    }
+}
