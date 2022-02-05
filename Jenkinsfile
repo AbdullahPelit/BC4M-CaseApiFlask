@@ -4,7 +4,7 @@ pipeline {
         stage('test') {
             steps {
                 sh """
-                    docket build -t test_bestcloud .
+                    docket build -t test_bestcloud1 .
                 """
 
 
@@ -14,7 +14,7 @@ pipeline {
         stage("run"){
             steps{
                 sh """
-                    docker run -rm test_bestcloud
+                    docker run -rm test_bestcloud1
                 """
             }
         }
