@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true } //dockerfile true yapmamızın sebebi docker hubdan çekmek yerine dockerfiledan yeni bir konteynır oluşturması
+    agent { docker { image 'python' } } //dockerfile true yapmamızın sebebi docker hubdan çekmek yerine dockerfiledan yeni bir konteynır oluşturması
     stages {
         stage('test') {
             steps {
