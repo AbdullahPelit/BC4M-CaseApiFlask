@@ -5,7 +5,9 @@ pipeline {
 //    }
     stages {
         stage('test') {
+            set +e
             steps {
+                
                 sh """
                     docker build -t test_bestclouds .
                 """
