@@ -1,61 +1,61 @@
-// pipeline {
-//     agent { docker { image 'python3' } } 
-// //     environment {
-// //        env.PATH = env.PATH + "C:\Windows\system32"
-// //    }
-//     stages {
-//         stage('test') {
-//             steps {
-//                 bat 'set +e'
-//                 sh """
-//                     docker build -t test_bestclouds .
-//                 """
-
-
-                
-//             }
-//         }
-//         stage("run"){
-//             steps{
-//                 bat 'set +e'
-//                 sh """
-//                     docker run -d -p 5000:5000 --name test_bestclouds_container test_bestclouds
-//                 """
-//             }
-//         }
-        
-//     }
-// }
 pipeline {
-    agent any
-    environment {
-       dockerImage = ""
-       registry = "abdullahpe/app"
-       registryCredential = "abdullah000"
-   }
+    agent { docker { image 'python3' } } 
+//     environment {
+//        env.PATH = env.PATH + "C:\Windows\system32"
+//    }
     stages {
-        stage('Build docker image') {
+        stage('test') {
             steps {
-                script{
-                    dockerImage = docker.build registry
+                bat 'set +e'
+                sh """
+                    docker build -t test_bestclouds .
+                """
 
-                }
+
                 
             }
         }
-        stage("Uploading Image"){
+        stage("run"){
             steps{
-                script{
-                    docker.withRegistery('',registryCredential)
-                    dockerImage.push()
-
-                }
-                
+                bat 'set +e'
+                sh """
+                    docker run -d -p 5000:5000 --name test_bestclouds_container test_bestclouds
+                """
             }
         }
         
     }
 }
+// pipeline {
+//     agent any
+//     environment {
+//        dockerImage = ""
+//        registry = "abdullahpe/app"
+//        registryCredential = "abdullah000"
+//    }
+//     stages {
+//         stage('Build docker image') {
+//             steps {
+//                 script{
+//                     dockerImage = docker.build registry
+
+//                 }
+                
+//             }
+//         }
+//         stage("Uploading Image"){
+//             steps{
+//                 script{
+//                     docker.withRegistery('',registryCredential)
+//                     dockerImage.push()
+
+//                 }
+                
+//             }
+//         }
+        
+//     }
+// }
 
 // pipeline {
 //   agent any //nerede execute edileceğini söylüyoruz.
