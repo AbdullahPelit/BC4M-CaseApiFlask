@@ -34,11 +34,24 @@ pipeline {
       }
     }
   
-    stage('Test') {
-      steps {
-        sh 'python3 app.py'
-        input(id: "Deploy Gate", message: "Deploy ${app.py}?", ok: 'Deploy')
-      }
+    // stage('Test') {
+    //   steps {
+    //     sh 'python3 app.py'
+    //     input(id: "Deploy Gate", message: "Deploy ${app.py}?", ok: 'Deploy')
+    //   }
+    // }
+    stage('Checkout') { 
+    steps {
+        echo 'Testing the application....'
+        git branch: 'python', url: 'https://github.com/AbdullahPelit/BC4M-CaseApiFlask'
+        }
+    }
+    stage('Run Program') {
+    dir('sources') {
+       steps {
+           sh 'python3 app.py'
+            }
+        }
     }
   
     stage('Deploy')
@@ -53,7 +66,7 @@ pipeline {
   post {
         always {
             echo 'The pipeline completed'
-            //junit allowEmptyResults: true, testResults:'**/test_reports/*.xml'
+            junit allowEmptyResults: true, testResults:'**/test_reports/*.xml'
         }
         success {                   
             echo "Flask Application Up and running!!"
