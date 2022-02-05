@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                
+                bat 'set +e'
                 sh """
                     docker build -t test_bestclouds .
                 """
