@@ -43,7 +43,7 @@ pipeline {
     stage('Checkout') { 
     steps {
         echo 'Testing the application....'
-        git branch: 'python', url: 'https://github.com/AbdullahPelit/BC4M-CaseApiFlask'
+        git branch: 'main', url: 'https://github.com/AbdullahPelit/BC4M-CaseApiFlask'
         }
     }
     stage('Run Program') {
