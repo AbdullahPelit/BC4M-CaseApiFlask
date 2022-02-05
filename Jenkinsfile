@@ -39,6 +39,7 @@ pipeline {
         sh 'python3 app.py'
         input(id: "Deploy Gate", message: "Deploy ${app.py}?", ok: 'Deploy')
       }
+    }
 
     stage('Deploy')
     {
@@ -47,7 +48,7 @@ pipeline {
         sh "sudo nohup python3 app.py > log.txt 2>&1 &"
       }
     }
-  }
+  
   
   post {
         always {
