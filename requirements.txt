@@ -3,4 +3,3 @@ config
 jsonify
 requests
 configparser
-docker
