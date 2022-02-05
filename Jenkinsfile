@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'docker'
-    } //docker { image 'python' } } //dockerfile true yapmamızın sebebi docker hubdan çekmek yerine dockerfiledan yeni bir konteynır oluşturması
+    agent { docker { image 'python' } } //dockerfile true yapmamızın sebebi docker hubdan çekmek yerine dockerfiledan yeni bir konteynır oluşturması
 //     environment {
 //        env.PATH = env.PATH + "c:\\Windows\\System32"
 //    }
