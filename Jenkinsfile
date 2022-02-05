@@ -34,26 +34,12 @@ pipeline {
       }
     }
   
-    // stage('Test') {
-    //   steps {
-    //     sh 'python3 app.py'
-    //     input(id: "Deploy Gate", message: "Deploy ${app.py}?", ok: 'Deploy')
-    //   }
-    // }
-    stage('Checkout') { 
-    steps {
-        echo 'Testing the application....'
-        git branch: 'main', url: 'https://github.com/AbdullahPelit/BC4M-CaseApiFlask'
-        }
-    }
-    stage('Run Program') {
-    dir('sources') {
-       steps {
-           sh 'python3 app.py'
-            }
-        }
-    }
-  
+    stage('Test') {
+      steps {
+        sh 'python3 app.py'
+        input(id: "Deploy Gate", message: "Deploy ${app.py}?", ok: 'Deploy')
+      }
+
     stage('Deploy')
     {
       steps {
