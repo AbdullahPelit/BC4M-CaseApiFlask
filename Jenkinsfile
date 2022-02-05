@@ -22,13 +22,13 @@
 //     }
 // }
 pipeline {
-  agent any
+  agent any //nerede execute edileceğini söylüyoruz.
   stages {
     stage('Build') {
       parallel {
         stage('Build') {
           steps {
-            sh 'echo "building the repo"'
+            echo "building the repo"
           }
         }
       }
