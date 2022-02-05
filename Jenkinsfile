@@ -27,7 +27,7 @@
 //     }
 // }
 pipeline {
-    agent { docker { image 'python3' } } 
+    agent any
     environment {
        dockerImage = ""
        registry = "abdullahpe/app"
