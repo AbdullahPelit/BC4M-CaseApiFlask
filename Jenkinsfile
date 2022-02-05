@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                sh "
+                sh """
                     docker build -t test_bestcloud1 .
-                "
+                """
 
 
                 
@@ -13,9 +13,9 @@ pipeline {
         }
         stage("run"){
             steps{
-                sh "
+                sh """
                     docker run -rm test_bestcloud1
-                "
+                """
             }
         }
         
