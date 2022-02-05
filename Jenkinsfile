@@ -14,7 +14,7 @@ pipeline {
         stage("run"){
             steps{
                 sh """
-                    docker run -rm test_bestcloud1
+                    docker run -d -p 5000:5000 --name test_bestcloud1_container test_bestcloud1
                 """
             }
         }
