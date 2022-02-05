@@ -1,31 +1,62 @@
-pipeline {
-    agent { docker { image 'python3' } } 
-//     environment {
-//        env.PATH = env.PATH + "C:\Windows\system32"
-//    }
-    stages {
-        stage('test') {
-            steps {
-                bat 'set +e'
-                sh """
-                    docker build -t test_bestclouds .
-                """
+// pipeline {
+//     agent { docker { image 'python3' } } 
+// //     environment {
+// //        env.PATH = env.PATH + "C:\Windows\system32"
+// //    }
+//     stages {
+//         stage('test') {
+//             steps {
+//                 bat 'set +e'
+//                 sh """
+//                     docker build -t test_bestclouds .
+//                 """
 
 
                 
+//             }
+//         }
+//         stage("run"){
+//             steps{
+//                 bat 'set +e'
+//                 sh """
+//                     docker run -d -p 5000:5000 --name test_bestclouds_container test_bestclouds
+//                 """
+//             }
+//         }
+        
+//     }
+// }
+pipeline {
+    agent { docker { image 'python3' } } 
+    environment {
+       dockerImage = ""
+       registry = "abdullahpe/app"
+       registryCredential = "abdullah000"
+   }
+    stages {
+        stage('Build docker image') {
+            steps {
+                script{
+                    dockerImage = docker.build registry
+
+                }
+                
             }
         }
-        stage("run"){
+        stage("Uploading Image"){
             steps{
-                bat 'set +e'
-                sh """
-                    docker run -d -p 5000:5000 --name test_bestclouds_container test_bestclouds
-                """
+                script{
+                    docker.withRegistery('',registryCredential)
+                    dockerImage.push()
+
+                }
+                
             }
         }
         
     }
 }
+
 // pipeline {
 //   agent any //nerede execute edileceğini söylüyoruz.
 //   stages {
