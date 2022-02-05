@@ -36,7 +36,7 @@ pipeline {
   
     stage('Test') {
       steps {
-        sh 'python3 test_app.py'
+        sh 'python3 app.py'
         input(id: "Deploy Gate", message: "Deploy ${test_bestcloud}?", ok: 'Deploy')
       }
     }
