@@ -48,9 +48,10 @@ pipeline {
         sh "sudo nohup python3 app.py > log.txt 2>&1 &"
       }
     }
+  }
   
   
-  post {
+    post {
         always {
             echo 'The pipeline completed'
             junit allowEmptyResults: true, testResults:'**/test_reports/*.xml'
@@ -64,4 +65,4 @@ pipeline {
         }
     }
   }
-}
+
