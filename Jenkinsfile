@@ -5,7 +5,6 @@ pipeline {
 //    }
     stages {
         stage('test') {
-            set +e
             steps {
                 
                 sh """
