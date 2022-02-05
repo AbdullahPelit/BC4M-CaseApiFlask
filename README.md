@@ -24,7 +24,7 @@ EXPOSE 5000\
 #KONTEYNIRLASTIRMA SURECI
 
 1)Öncelikle CMD de Uygulamanın bulundugu klasöre geliyoruz.\
-2)image oluşturmak için "docker build -t test_bestcloud ." yazıyoruz. // t nin anlamı tag yani bir isim veriyoruz imageimize // sonda koydugumuz . ise yerel lokasyonda çalıştırmak \istediğimiz anlamına geliyor.\
+2)image oluşturmak için "docker build -t test_bestcloud ." yazıyoruz. // t nin anlamı tag yani bir isim veriyoruz imageimize // sonda koydugumuz . ise yerel lokasyonda çalıştırmak istediğimiz anlamına geliyor.\
 3)docker images yazarak image'imizi kontrol ediyoruz.\
 4)"docker run -d -p 5000:5000 --name test_bestcloud_container test_bestcloud" ile imageimizi konteynırlaştırıyoruz. \
 //-d =>  detached mode anlamına geliyor. Arka planda çalıştırır ve kimliği yazdırır.\

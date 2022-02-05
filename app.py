@@ -51,10 +51,8 @@ def getWeatherResult(city_name,api_key):
 
 #Post isteği gönderiyor formdan istekte bulundugumuz için. /searchcity endpointiyle beraber çalışıyor.
 #@app.route("/tempurates", methods=["POST","GET"])
-#def showTempurates():
-    
-#    city_name = request.form["cityName"]
-   
+#def showTempurates():    
+#    city_name = request.form["cityName"]   
 #    apiKey = getApiKey()
 #    data = getWeatherResult(city_name,apiKey)
 #    #data = request.json(getWeatherResult(city_name,apiKey))
